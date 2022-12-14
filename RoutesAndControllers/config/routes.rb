@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   # root "articles#index"
 
   resources :users
+  resources :artworks
 
   # get "/users", to: "users#index"
   # post "/users", to: "users#create"
