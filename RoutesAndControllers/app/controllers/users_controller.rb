@@ -6,7 +6,7 @@ class UsersController < ApplicationController
     end
 
     def create
-        @user = User.new(userparam)
+        @user = User.new(user_param)
         # user.save!
         # render json: user
 
@@ -26,8 +26,9 @@ class UsersController < ApplicationController
     def update 
         @user = User.find(params[:id])
 
-        if @user.update(userparam)
-            redirect_to user_url(@user)
+        if @user.update(user_param)
+            # redirect_to user_url(@user)
+            render json: @user
         else
             render json: @user.errors.full_messages, status: :unprocessable_entity
         end
@@ -36,12 +37,13 @@ class UsersController < ApplicationController
     def destroy 
         @user = User.find(params[:id])
         @user.destroy
-        redirect_to user_url
+        @users = User.all
+        render json: @users
     end
     
     private
 
-    def userparam
+    def user_param
         params.require(:users).permit(:username)
     end
 end

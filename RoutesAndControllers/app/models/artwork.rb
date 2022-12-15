@@ -10,7 +10,8 @@
 #  updated_at :datetime         not null
 #
 class Artwork < ApplicationRecord
-    validates :title, :image_url, :artist_id, presence: true, uniqueness: true
+    validates :image_url, presence: true, uniqueness: true
+    validates :artist_id, :title, presence:true
 
     belongs_to :artist,
         foreign_key: :artist_id,

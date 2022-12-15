@@ -27,7 +27,7 @@ class ArtworksController < ApplicationController
         @artwork = Artwork.find(params[:id])
 
         if @artwork.update(artwork_param)
-            redirect_to artwork_url(@artwork)
+            render json: @artwork
         else
             render json: @artwork.errors.full_messages, status: :unprocessable_entity
         end
@@ -36,7 +36,8 @@ class ArtworksController < ApplicationController
     def destroy 
         @artwork = Artwork.find(params[:id])
         @artwork.destroy
-        redirect_to artwork_url
+        @artworks = Artwork.all
+        render json: @artworks
     end
     
     private
