@@ -12,16 +12,15 @@
 class Artwork < ApplicationRecord
     validates :image_url, presence: true, uniqueness: true
     validates :artist_id, :title, presence:true
-    validates :title, uniqueness {scope: :artist_id, message: "Can only have unique titles per artist."}
-
-
+    validates :title, uniqueness: {scope: :artist_id, message: "Can only have unique titles per artist."}
+    
     belongs_to :artist,
         foreign_key: :artist_id,
         class_name: :User
 
-    has_many :artworks,
+    has_many :artworks_shared,
         foreign_key: :artwork_id,
-        class_name: :Artwork
+        class_name: :ArtworkShare
 
     has_many :shared_viewers,
         through: :artworks,

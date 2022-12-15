@@ -11,7 +11,7 @@ User.create(username: "bob2")
 User.create(username: "bob3")
 User.create(username: "bob4")
 
-Artwork.create(title: "da vinci", image_url: "url.com", artist_id: 1)
+Artwork.create(title: "vinci", image_url: "url.com", artist_id: 1)
 Artwork.create(title: "vinci", image_url: "url4.com", artist_id: 1)
 Artwork.create(title: "da vii", image_url: "url3.com", artist_id: 1)
 Artwork.create(title: "dance", image_url: "ur2.com", artist_id: 1)
