@@ -1,6 +1,12 @@
 class ArtworkSharesController < ApplicationController
     def index
-        @artwork_shares = ArtworkShare.all
+        # params[:user_id] => "1"
+        if params.has_key?(:user_id)
+            @artwork_shares = ArtworkShare.find_by(viewer_id: params[:user_id])
+        else
+            @artwork_shares = ArtworkShare.all
+        end
+
         render json: @artwork_shares 
     end
 
