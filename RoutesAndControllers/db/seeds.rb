@@ -16,4 +16,4 @@ Artwork.create(title: "vinci", image_url: "url4.com", artist_id: 3)
 Artwork.create(title: "da vii", image_url: "url3.com", artist_id: 2)
 Artwork.create(title: "dance", image_url: "ur2.com", artist_id: 2)
 
-ArtworkShare.create(viewer_id: 3, artwork_id: 3)
+# ArtworkShare.create(viewer_id: 3, artwork_id: 3)

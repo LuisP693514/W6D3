@@ -1,4 +1,4 @@
-class ArtworkShareController < ApplicationController
+class ArtworkSharesController < ApplicationController
     def index
         @artwork_shares = ArtworkShare.all
         render json: @artwork_shares 
